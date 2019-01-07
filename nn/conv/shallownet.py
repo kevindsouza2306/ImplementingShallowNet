@@ -4,7 +4,9 @@ from keras.layers.core import Dense
 from keras.layers.convolutional import Conv2D
 from keras.models import Sequential
 from keras import backend as K
-from tensorflow.python import padding_fifo_queue
+
+
+# from tensorflow.python import padding_fifo_queue
 
 
 class ShallowNet:

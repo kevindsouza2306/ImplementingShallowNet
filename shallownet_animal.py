@@ -29,8 +29,8 @@ data = data.astype("float") / 255.0
 
 (trainX, testX, trainY, testY) = train_test_split(data, labels, test_size=0.25, random_state=42)
 
-trainY = LabelBinarizer().fit(trainY)
-testY = LabelBinarizer().fit(testY)
+trainY = LabelBinarizer().fit_transform(trainY)
+testY = LabelBinarizer().fit_transform(testY)
 
 print("[INFO] compiling model...")
 opt = SGD(lr=0.005)
