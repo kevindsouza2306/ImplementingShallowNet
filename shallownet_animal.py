@@ -5,7 +5,6 @@ from preprocessing.imagetoarraypreprocessor import ImageToArrayPreprocessor
 from preprocessing.simplepreprocessor import SimplePreprocessor
 from datasets.simpledataloader import SimpleDataLoader
 from nn.conv.shallownet import ShallowNet
-
 from keras.optimizers import SGD
 from imutils import paths
 import argparse
@@ -47,7 +46,7 @@ H = model.fit(trainX, trainY, validation_data=(testX, testY), batch_size=32, epo
 print("[INFO] Evaluating the Network...")
 prediction = model.predict(testX, batch_size=32)
 print(classification_report(testY.argmax(axix=1), prediction.argmax(axis=1)))
-target_name = ["cat", "dog", "panda"]
+target_name = ["cat", "dog"]
 
 plt.style.use("ggplot")
 plt.figure()

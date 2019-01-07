@@ -8,13 +8,13 @@ from tensorflow.python import padding_fifo_queue
 
 
 class ShallowNet:
-    def built(self, width, height, depth, classes):
+    def built(width, height, depth, classes):
         model = Sequential()
         inputShape = (height, width, depth)
 
         if K.image_data_format() == "channel_first":
             inputShape = (depth, height, width)
-        model.add(Conv2D(32, (3, 3)), padding="same", input_shape=inputShape)
+        model.add(Conv2D(32, (3, 3), padding="same", input_shape=inputShape))
         model.add(Activation("relu"))
         model.add(Flatten())
         model.add(Dense(classes))
