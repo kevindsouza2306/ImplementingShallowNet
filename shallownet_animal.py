@@ -26,18 +26,17 @@ sdl = SimpleDataLoader(preprocessor=[sp, iap])
 
 (data, labels) = sdl.load(imagePaths, verbose=500)
 data = data.astype("float") / 255.0
-print("lable = {}".format(labels))
+
 (trainX, testX, trainY, testY) = train_test_split(data, labels, test_size=0.25, random_state=42)
-print("trainY = {}".format(testY))
+
 trainY = LabelBinarizer().fit_transform(trainY)
 testY = LabelBinarizer().fit_transform(testY)
-#print("trainY LB = {}".format(testY))
+#print("testY = {}".format(testY))
 print("[INFO] compiling model...")
 opt = SGD(lr=0.005)
 
-#model = ShallowNet.built(width=32, height=32, depth=3, classes=2)
-
 model = ShallowNet.built(width=32, height=32, depth=3, classes=2)
+
 model.compile(loss="categorical_crossentropy", optimizer=opt, metrics=["accuracy"])
 
 print("[INFO] Training Network...")
