@@ -7,6 +7,11 @@ from keras.optimizers import SGD
 from keras.datasets import cifar10
 from matplotlib import pyplot as plt
 import numpy as np
+import argparse
+
+ap = argparse.ArgumentParser()
+ap.add_argument("-m", "--model", help="path of model", required=True)
+args = vars(ap.parse_args())
 
 print("[INFO] loading CIFAR-10 data....")
 
@@ -28,10 +33,11 @@ print("[INFO] training network")
 
 H = model.fit(trainX, trainY, validation_data=(testX, testY), batch_size=32, epochs=40, verbose=1)
 
+model.save(args["model"])
 print("[INFO] evaluating network")
 predictions = model.predict(testX, batch_size=32)
 print(classification_report(testY.argmax(axis=1), predictions.argmax(axis=1), target_names=labelName))
-print("")
+
 plt.style.use("ggplot")
 plt.figure()
 plt.plot(np.arange(0, 40), H.history["loss"], label="train_loss")
