@@ -10,6 +10,7 @@ from keras import backend as K
 
 
 class ShallowNet:
+    @staticmethod
     def built(width, height, depth, classes):
         model = Sequential()
         inputShape = (height, width, depth)
