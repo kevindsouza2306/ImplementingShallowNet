@@ -31,7 +31,7 @@ H = model.fit(trainX, trainY, validation_data=(testX, testY), batch_size=32, epo
 print("[INFO] evaluating network")
 predictions = model.predict(testX, batch_size=32)
 print(classification_report(testY.argmax(axis=1), predictions.argmax(axis=1), target_names=labelName))
-
+print("")
 plt.style.use("ggplot")
 plt.figure()
 plt.plot(np.arange(0, 40), H.history["loss"], label="train_loss")
