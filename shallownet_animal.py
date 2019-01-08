@@ -31,7 +31,7 @@ data = data.astype("float") / 255.0
 
 trainY = LabelBinarizer().fit_transform(trainY)
 testY = LabelBinarizer().fit_transform(testY)
-
+#print("testY = {}".format(testY))
 print("[INFO] compiling model...")
 opt = SGD(lr=0.005)
 

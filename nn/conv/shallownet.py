@@ -14,7 +14,7 @@ class ShallowNet:
         model = Sequential()
         inputShape = (height, width, depth)
 
-        if K.image_data_format() == "channel_first":
+        if K.image_data_format() == "channels_first":
             inputShape = (depth, height, width)
         model.add(Conv2D(32, (3, 3), padding="same", input_shape=inputShape))
         model.add(Activation("relu"))
