@@ -1,4 +1,4 @@
-# ImplementingShallowNet <img src="https://img.shields.io/badge/License-MIT-green.svg"  alt="License"/> <img src="https://img.shields.io/badge/Kevin-D%27souza-blue.svg"  alt="License"/> 
+# ImplementingShallowNet <img src="https://img.shields.io/badge/Kevin-D%27souza-blue.svg"  alt="License"/> 
 
 ## Shallownet for CIFAR-10 dataset
 Run the below command to start the training on the CIFAR-10 dataset from Keras
